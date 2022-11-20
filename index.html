@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="default.css">
+    <script>
+        window.eazel = {
+            config: {
+                width: 0,
+                height: 0,
+            },
+        };
+
+        window.addEventListener("resize", () => {
+            window.eazel.config.width = window.innerWidth;
+            window.eazel.config.height = window.innerHeight;
+        });
+
+        const canvas = document.getElementById("canvas");
+
+        canvas.width = window.eazel.config.width;
+        canvas.height = window.eazel.config.height;
+    </script>
+    <script async src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/1.0.2/easeljs.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "easel-darky": "#393939",
+                        "easel-balge-light": "#FAD6A5",
+                        "easel-sage-dark": "#61764B",
+                        "easel-sage-light": "#9BA17B",
+                        "easel-balge-dark": "#CFB997",
+                        "easel-light": "#EEEEEE",
+                        "easel-pink": "#FFE1E1"
+                    }
+                },
+            },
+            plugins: [],
+            mode: "jit"
+        }
+    </script>
+    <script src="init.js"></script>
+    <script src="editor.js"></script>
+    <title>Eazel</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="550" height="500">
+
+    </canvas>
+</body>
+
+</html>
